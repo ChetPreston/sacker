@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="hiker.css">
+    </head>
+    <body>
+        <div id="d1">
+        <select id="w-select" onchange="playWhistle()">
+            <option value="0" class="formList">Whistle-One</option>
+            <option value="1" class="formList">Whistle-Two</option>
+            <option value="2" class="formList">Whistle-Three</option>
+            <option value="3" class="formList">Whistle-Four</option>
+            <option value="4" class="formList">Whistle-Five</option>
+        </select>
+        </div>
+        <div id="d2">
+        <label class="labels" for="sack-timer">Timer:</label>
+        <input type="number" min="1" max="7" value="3" id="sack-timer">
+        </div>
+        <div id="d3">
+        <label class="labels" for="vol">Volume:</label>
+        <input type="range" id="vol" min="0" max="100" value="100">
+        </div>
+        <audio id="whistle-one">
+            <source src="w1.wav" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <audio id="whistle-two">
+            <source src="w2.wav" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <audio id="whistle-three">
+            <source src="w3.wav" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <audio id="whistle-four">
+            <source src="w4.wav" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <audio id="whistle-five">
+            <source src="w5.wav" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <div id="d4">
+          <button id="whistleBtn" onclick="playWhistle()">Play Whistle</button>
+          <button onclick="delayWhistle()">Delayed Whistle</button>
+        </div>
+        <div id="d5">
+            <button id="startButton">Start</button>
+        </div>
+    <script src="hiker.js"></script>
+    </body>
+</html>
