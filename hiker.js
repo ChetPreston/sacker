@@ -7,6 +7,8 @@ const whistleFour = document.getElementById("whistle-four")
 const whistleFive = document.getElementById("whistle-five")
 const timer = document.getElementById("sack-timer")
 const allWhistles = [whistleOne, whistleTwo, whistleThree, whistleFour, whistleFive]
+const startBtn = document.getElementById('startButton')
+
 
 
 
@@ -48,15 +50,20 @@ if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
       console.error('Speech recognition error:', event.error);
     };
   
-    document.getElementById('startButton').addEventListener('click', function() {
+    startBtn.addEventListener('change', function() {
       recognition.start();
+      if (startBtn.value) {
+        startBtn.style.backgroundColor = "green"
+        startBtn.style.color = "white"
+        startBtn.textContent = "LISTENING"
+      } else { 
+        startBtn.style.backgroundColor = "red"
+        startBtn.style.color = "black"
+        startBtn.textContent = "TURN ON"
+      }
       console.log('Listening for voice commands...');
     });
   
-    function delayWhistle() {
-      console.log('Hike has been set!');
-      // Add your logic here to execute when the voice command "set hike" is recognized
-    }
   } else {
     // Speech recognition API not supported
     console.error('Speech recognition not supported');
