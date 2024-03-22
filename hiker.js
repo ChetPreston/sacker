@@ -8,6 +8,7 @@ const whistleFive = document.getElementById("whistle-five")
 const timer = document.getElementById("sack-timer")
 const allWhistles = [whistleOne, whistleTwo, whistleThree, whistleFour, whistleFive]
 const startBtn = document.getElementById('startButton')
+var isToggled = false;
 
 
 
@@ -41,7 +42,7 @@ if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
       console.log('Recognized:', command);
   
       // Check if the recognized command matches the specified phrase
-      if (command === 'set hike') {
+      if (command === 'set hike' || command === 'hike') {
         delayWhistle(); // Call the function to set hike
       }
     };
@@ -50,13 +51,16 @@ if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
       console.error('Speech recognition error:', event.error);
     };
   
-    startBtn.addEventListener('change', function() {
-      recognition.start();
-      if (startBtn.value) {
+    startBtn.addEventListener('click', function() {
+     
+        isToggled = !isToggled
+      if (isToggled) {
+        recognition.start();
         startBtn.style.backgroundColor = "green"
         startBtn.style.color = "white"
         startBtn.textContent = "LISTENING"
       } else { 
+        recognition.stop();
         startBtn.style.backgroundColor = "red"
         startBtn.style.color = "black"
         startBtn.textContent = "TURN ON"
