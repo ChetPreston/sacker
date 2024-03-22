@@ -1,12 +1,14 @@
 body {
     background: black;
-    display: block;
-    width: 450px;
-    height: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: 100vh;
     margin-top: 10px;
     border: 3px orange solid;
     border-radius: 20px;
-    padding-top:20px;
     margin-left:auto;
     margin-right:auto;
     padding-left:15px;
@@ -16,35 +18,43 @@ body {
 #w-select {
     display: block;
     margin: 20px auto;
-    font-size:20px;
-    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+    width: 50vh;
+    height: 12vh;
+    font-size:50px;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+
 }
 
 .labels {
     font-weight: bold;
-    font-size: 20px;
-    color: orangered
+    font-size: 60px;
+    color: teal
 }
 
 #sack-timer {
     display: inline;
     margin-left: 10px;
+    margin-top: 40px;
     text-align: center;
-    font-size: 18px;
-
+    font-size: 50px;
+    width: 35vh;
+    height: 11vh;
 }
 
 #vol {
     display: inline;
     margin-left: 10px;
+    height: 10vh;
+    width: 50vh;
  
 }
 #d4, #d3, #d2, #d5 {
-    border:2px white solid;
+
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
     padding: 9px 0px;
 }
 
@@ -53,4 +63,12 @@ body {
     color: black;
     height: 40px;
     width: 120px;
+}
+
+#startButton {
+    width: 60vh;
+    height: 15vh;
+    font-size: 60px;
+    background: red;
+    color: black
 }
